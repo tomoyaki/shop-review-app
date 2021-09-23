@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 /* lib */
 import { getShops } from "./src/lib/firebase";
+/* components */
+import { ShopReviewItem } from "./src/components/ShopReviewItem";
 /* types */
 import { Shop } from "./src/types/shop";
 
@@ -18,12 +20,7 @@ export default function App() {
   };
 
   const shopItems = shops.map((shop, index) => (
-    <View style={{ margin: 10 }} key={index.toString()}>
-      <Text>
-        {shop.name}
-        {shop.place}
-      </Text>
-    </View>
+    <ShopReviewItem shop={shop} key={index.toString()} />
   ));
 
   return (
