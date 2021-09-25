@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, FlatList, View, SafeAreaView } from "react-native";
 /* lib */
 import { getShops } from "./src/lib/firebase";
 /* components */
@@ -24,10 +24,17 @@ export default function App() {
   ));
 
   return (
-    <View style={styles.container}>
-      {shopItems}
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={shops}
+        renderItem={({ item }: { item: Shop }) => (
+          <ShopReviewItem shop={item} />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+        numColumns={2}
+      />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
