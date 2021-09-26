@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
   placeText: {
     fontSize: 12,
     color: "#888",
-    marginTop: 8,
+    marginTop: 5,
   },
 });

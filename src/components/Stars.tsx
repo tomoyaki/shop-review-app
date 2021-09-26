@@ -47,10 +47,13 @@ const styles = StyleSheet.create({
   },
   star: {
     color: "#800",
-    marginRight: 4,
+    marginRight: 3,
+    marginTop: 3,
   },
   scoreText: {
     color: "#000",
     fontWeight: "bold",
+    marginLeft: 3,
+    marginTop: 3,
   },
 });
